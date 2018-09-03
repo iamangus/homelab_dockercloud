@@ -41,7 +41,7 @@ services:
     network_mode: bridge
     ports:
       - 6789:6789
-    enviornment:
+    environment:
       - TZ=america/chicago
       - PUID=1000
       - PGID=1000
@@ -61,7 +61,7 @@ services:
       - 32469:32469/udp
       - 5353:5353/udp
       - 1900:1900/udp
-    enviornment:
+    environment:
       - TZ=america/chicago
       - PUID=1000
       - PGID=1000

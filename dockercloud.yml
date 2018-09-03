@@ -1,6 +1,7 @@
 ---
 version: '3'
 services:
+  
   sonarr:
     container_name: sonarr
     image: lsioarmhf/sonarr
@@ -32,3 +33,40 @@ services:
       - /mnt/g1/config/radarr:/config
       - /mnt/g1/media/movies:/movies
       - /mnt/g1/downloads/complete:/downloads
+
+  nzbget:
+    container_name: nzbget
+    image: lsioarmhf/nzbget
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 6789:6789
+    enviornment:
+      - TZ=america/chicago
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/g1/config/sabnzb:/config
+      - /mnt/g1/downloads/complete:/downloads
+
+  plex:
+    container_name: plex
+    image: lsioarmhf/plex
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 32400:32400
+      - 32400:32400/udp
+      - 32469:32469 
+      - 32469:32469/udp
+      - 5353:5353/udp
+      - 1900:1900/udp
+    enviornment:
+      - TZ=america/chicago
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/g1/config/plex:/config
+      - /mnt/g1/media/tv:/data/tvshows
+      - /mnt/g1/media/movies:/data/movies
+      - /mnt/g2/transcode:/transcode

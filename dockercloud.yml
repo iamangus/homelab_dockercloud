@@ -1,1 +1,35 @@
 ---
+
+  sonarr:
+    container_name: sonarr
+    image: linuxserver/sonarr
+    restart: unless-stopped
+    depends_on:
+      - transmission
+      - plex
+    network_mode: host
+    environment:
+      - TZ=Europe/Bucharest
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /opt/config/sonarr:/config
+      - /opt/storage/series:/tv
+      - /opt/downloads/complete:/downloads
+
+  radarr:
+    container_name: radarr
+    image: linuxserver/radarr
+    restart: unless-stopped
+    depends_on:
+      - transmission
+      - plex
+    network_mode: host
+    environment:
+      - TZ=Europe/Bucharest
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /opt/config/radarr:/config
+      - /opt/storage/movies:/movies
+- /opt/downloads/complete:/downloads

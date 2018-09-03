@@ -53,14 +53,14 @@ services:
     container_name: plex
     image: lsioarmhf/plex
     restart: unless-stopped
-    network_mode: bridge
-    ports:
-      - 32400:32400
-      - 32400:32400/udp
-      - 32469:32469 
-      - 32469:32469/udp
-      - 5353:5353/udp
-      - 1900:1900/udp
+    network_mode: host
+#    ports:
+#      - 32400:32400
+#      - 32400:32400/udp
+#      - 32469:32469 
+#      - 32469:32469/udp
+#      - 5353:5353/udp
+#      - 1900:1900/udp
     environment:
       - TZ=america/chicago
       - PUID=1000

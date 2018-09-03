@@ -1,4 +1,6 @@
 ---
+version: '2.1'
+services:
   sonarr:
     container_name: sonarr
     image: lsioarmhf/sonarr

@@ -5,7 +5,6 @@ services:
     container_name: sonarr
     image: lsioarmhf/sonarr
     restart: unless-stopped
-    depends_on:
     network_mode: bridge
     ports:
       - 8989:8989

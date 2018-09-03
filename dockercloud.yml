@@ -19,10 +19,11 @@ services:
 
   radarr:
     container_name: radarr
-    image: linuxserver/radarr
+    image: lsioarmhf/radarr
     restart: unless-stopped
-    depends_on:
-    network_mode: host
+    network_mode: bridge
+    ports:
+      - 7878:7878
     environment:
       - TZ=america/chicago
       - PUID=1000

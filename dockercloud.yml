@@ -34,7 +34,7 @@ services:
       - /mnt/g1/media/movies:/movies
       - /mnt/g1/downloads/complete:/downloads
 
-  nzbget:
+  sabnzb:
     container_name: sabnzb
     image: lsioarmhf/sabnzb
     restart: unless-stopped

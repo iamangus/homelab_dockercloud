@@ -35,12 +35,13 @@ services:
       - /mnt/g1/downloads/complete:/downloads
 
   nzbget:
-    container_name: nzbget
-    image: lsioarmhf/nzbget
+    container_name: sabnzb
+    image: lsioarmhf/sabnzb
     restart: unless-stopped
     network_mode: bridge
     ports:
-      - 6789:6789
+      - 8080:8080
+      - 9090:9090
     environment:
       - TZ=america/chicago
       - PUID=1000
@@ -48,6 +49,7 @@ services:
     volumes:
       - /mnt/g1/config/sabnzb:/config
       - /mnt/g1/downloads/complete:/downloads
+      - /mnt/g1/downloads/incomplete:/incomplete-downloads
 
   plex:
     container_name: plex

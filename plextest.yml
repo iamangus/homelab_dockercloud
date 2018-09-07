@@ -18,6 +18,8 @@ services:
 
   plex-slave:
     image: iamangus/arm-plexremotetranscoder2:slave-latest
+    depends_on:
+      - plex-master
     restart: unless-stopped
     network_mode: bridge
     ports:

@@ -17,7 +17,8 @@ services:
       - /mnt/g2/transcode:/transcode
 
   plex-slave:
-    image: iamangus/arm-plexremotetranscoder2:slave-latest
+    image: deevus/plex-remote-transcoder:slave-latest
+    #image: iamangus/arm-plexremotetranscoder2:slave-latest
     depends_on:
       - plex-master
     restart: unless-stopped

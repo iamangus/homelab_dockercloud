@@ -29,7 +29,7 @@ services:
       - MASTER_IP="192.168.0.50"
       - SLAVE_IP="192.168.0.50"
       - SLAVE_PORT="2222"
-      - SLAVE_USER="odroid"
+      - SLAVE_USER="plex"
     volumes:
       - /mnt/g1/config/plextest:/config
       - /mnt/g1/media/tv:/data/tvshows

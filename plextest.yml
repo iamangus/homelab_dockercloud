@@ -2,7 +2,7 @@
 version: '3'
 services:
   plex-master:
-    image: iamangus/arm-plexremotetranscoder:master-latest
+    image: iamangus/arm-plexremotetranscoder2:master-latest
     restart: unless-stopped
     network_mode: host
     environment:
@@ -17,7 +17,7 @@ services:
       - /mnt/g2/transcode:/transcode
 
   plex-slave:
-    image: iamangus/arm-plexremotetranscoder:slave-latest
+    image: iamangus/arm-plexremotetranscoder2:slave-latest
     restart: unless-stopped
     network_mode: bridge
     ports:

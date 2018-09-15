@@ -14,7 +14,6 @@ services:
       - /mnt/g1/config/plextest:/config
       - /mnt/g1/media/tv:/data/tvshows
       - /mnt/g1/media/movies:/data/movies
-      - /mnt/g2/transcode:/transcode
 
   plex-slave:
     image: deevus/plex-remote-transcoder:slave-latest
@@ -37,4 +36,3 @@ services:
       - /mnt/g1/config/plextest:/config
       - /mnt/g1/media/tv:/data/tvshows
       - /mnt/g1/media/movies:/data/movies
-      - /mnt/g2/transcode:/transcode

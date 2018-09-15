@@ -5,6 +5,10 @@ services:
   sonarr:
     container_name: sonarr
     image: lsioarmhf/sonarr
+    deploy:
+      placement:
+        constraints:
+          - node.labels.arc == arm
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -21,6 +25,10 @@ services:
   radarr:
     container_name: radarr
     image: lsioarmhf/radarr
+    deploy:
+      placement:
+        constraints:
+          - node.labels.arc == arm
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -37,6 +45,10 @@ services:
   sabnzbd:
     container_name: sabnzbd
     image: lsioarmhf/sabnzbd
+    deploy:
+      placement:
+        constraints:
+          - node.labels.arc == arm
     restart: unless-stopped
     network_mode: bridge
     ports:
@@ -54,6 +66,10 @@ services:
   plex:
     container_name: plex
     image: linuxserver/plex
+    deploy:
+      placement:
+        constraints:
+          - node.labels.arc == x64
     restart: unless-stopped
     network_mode: host
 #    ports:

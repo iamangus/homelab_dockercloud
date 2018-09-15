@@ -53,7 +53,7 @@ services:
 
   plex:
     container_name: plex
-    image: lsioarmhf/plex
+    image: linuxserver/plex
     restart: unless-stopped
     network_mode: host
 #    ports:
@@ -71,4 +71,4 @@ services:
       - /mnt/g1/config/plex:/config
       - /mnt/g1/media/tv:/data/tvshows
       - /mnt/g1/media/movies:/data/movies
-      - /mnt/g2/transcode:/transcode
+      #- /mnt/g2/transcode:/transcode

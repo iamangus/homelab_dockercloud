@@ -78,6 +78,7 @@ services:
       - PUID=1000
       - PGID=1000
       - VIRTUAL_HOST=sab.act.com
+      - VIRTUAL_PORT=8080
     volumes:
       - /mnt/g1/config/sabnzb:/config
       - /mnt/g1/downloads/complete:/downloads
@@ -109,6 +110,7 @@ services:
       - PGID=1000
       - ADVERTISE_IP=http://192.168.0.50:32400/
       - VIRTUAL_HOST=plex.act.com
+      - VIRTUAL_PORT=32400
     hostname: PlexContainer
     volumes:
       - /mnt/g1/config/plex:/config

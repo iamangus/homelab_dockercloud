@@ -16,8 +16,6 @@ services:
   sonarr:
     container_name: sonarr
     image: lsioarmhf/sonarr
-    depends_on:
-      - nginx-proxy
     deploy:
       placement:
         constraints:
@@ -39,8 +37,6 @@ services:
   radarr:
     container_name: radarr
     image: lsioarmhf/radarr
-    depends_on:
-      - nginx-proxy
     deploy:
       placement:
         constraints:
@@ -62,8 +58,6 @@ services:
   sabnzbd:
     container_name: sabnzbd
     image: lsioarmhf/sabnzbd
-    depends_on:
-      - nginx-proxy
     deploy:
       placement:
         constraints:
@@ -87,8 +81,6 @@ services:
   plex:
     container_name: plex
     image: plexinc/pms-docker
-    depends_on:
-      - nginx-proxy
     deploy:
       placement:
         constraints:
